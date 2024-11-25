@@ -36,9 +36,15 @@ jobs:
       - name: Build the JAR file
         run: ./gradlew build
 
+      # Set up Docker Compose
+      - name: Start services using Docker Compose
+        run: |
+          docker-compose -f docker-compose.yml up -d
+          sleep 20 # Wait for services to start
+
       #build docker image of pro-customer app
       - name: Build Docker Image
-        run:  docker build -t $IMAGE_NAME .
+        run: docker build -t $IMAGE_NAME .
 
       #Run application with G1GC
       - name: Run Application with G1GC
@@ -64,7 +70,7 @@ jobs:
         #Run application with ZGC
       - name: Run Application With ZGC
         run: |
-          docker run -d --name pro-customer-zgc -p $APP_PORT:8080 $IMAGE_NAME java $ZGC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
+          docker run -d --name pro-customer-zgc -p 8081:8080 $IMAGE_NAME java $ZGC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
         id: zgc-app
 
         #Run Postman test(ZGC)
@@ -79,6 +85,10 @@ jobs:
       - name: Stop ZGC Container
         run: docker stop zgc-app && docker rm zgc-app
 
+      # Tear down services after tests
+      - name: Tear down services
+        run: docker-compose -f docker-compose.yml down
+        
         #Pulish Test Results
       - name: Publish Test Results to Github Packages
         uses: actions/upload-artifact@v3
