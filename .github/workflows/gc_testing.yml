@@ -78,7 +78,7 @@ jobs:
       # Run Postman tests using Newman Docker image (G1GC)
       - name: Run Postman Tests (G1GC)
         run: |
-          docker run --network test-network -v $(pwd)/postman-collection:/etc/newman -t postman/newman run http://pro-customer-g1gc:8080/NimbusPay-ProCustomer.postman_collection.json --reporter-json-export /etc/newman/g1gc_results.json
+          docker run --network test-network -v $(pwd)/postman-collection:/etc/newman -t postman/newman run http://pro-customer:8080/NimbusPay-ProCustomer.postman_collection.json --reporter-json-export /etc/newman/g1gc_results.json
         id: g1gc-test
 
       # Stop G1GC container
@@ -94,7 +94,7 @@ jobs:
       # Run Postman tests using Newman Docker image (ZGC)
       - name: Run Postman Tests (ZGC)
         run: |
-          docker run --network test-network -v $(pwd)/postman-collection:/etc/newman -t postman/newman run http://pro-customer-zgc:8080/NimbusPay-ProCustomer.postman_collection.json --reporter-json-export /etc/newman/zgc_results.json
+          docker run --network test-network -v $(pwd)/postman-collection:/etc/newman -t postman/newman run http://pro-customer:8080/NimbusPay-ProCustomer.postman_collection.json --reporter-json-export /etc/newman/zgc_results.json
         id: zgc-test
 
       # Stop ZGC container
