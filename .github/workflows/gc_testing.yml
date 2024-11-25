@@ -65,7 +65,7 @@ jobs:
       # Run application with G1GC
       - name: Run Application with G1GC
         run: |
-          docker run -d --name pro-customer-g1gc -p $APP_PORT:8080 $IMAGE_NAME java $G1GC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
+          docker run -d --name pro-customer-g1gc -p 8080:8080 $IMAGE_NAME java $G1GC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
         id: g1gc-app
 
       # Pull Newman Docker Image
