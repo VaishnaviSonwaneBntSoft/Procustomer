@@ -62,10 +62,13 @@ jobs:
       - name: Build Docker Image
         run: docker build -t $IMAGE_NAME .
 
+      - name: Create Docker Network
+        run: docker network create test-network
+
       # Run application with G1GC
       - name: Run Application with G1GC
         run: |
-          docker run -d --name pro-customer-g1gc -p 8080:8080 $IMAGE_NAME java $G1GC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
+          docker run -d --name pro-customer --network test-network -p 8080:8080 $IMAGE_NAME java $G1GC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
         id: g1gc-app
 
       # Pull Newman Docker Image
@@ -75,7 +78,7 @@ jobs:
       # Run Postman tests using Newman Docker image (G1GC)
       - name: Run Postman Tests (G1GC)
         run: |
-          docker run -v $(pwd)/postman-collection:/etc/newman -t postman/newman run /etc/newman/NimbusPay-ProCustomer.postman_collection.json --reporter-json-export /etc/newman/g1gc_results.json
+          docker run --network test-network -v $(pwd)/postman-collection:/etc/newman -t postman/newman run http://pro-customer-g1gc:8080/NimbusPay-ProCustomer.postman_collection.json --reporter-json-export /etc/newman/g1gc_results.json
         id: g1gc-test
 
       # Stop G1GC container
@@ -85,18 +88,21 @@ jobs:
       # Run application with ZGC
       - name: Run Application with ZGC
         run: |
-          docker run -d --name pro-customer-zgc -p 8081:8080 $IMAGE_NAME java $ZGC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
+          docker run -d --name pro-customer-zgc --network test-network -p 8081:8080 $IMAGE_NAME java $ZGC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
         id: zgc-app
 
       # Run Postman tests using Newman Docker image (ZGC)
       - name: Run Postman Tests (ZGC)
         run: |
-          docker run -v $(pwd)/postman-collection:/etc/newman -t postman/newman run /etc/newman/NimbusPay-ProCustomer.postman_collection.json --reporter-json-export /etc/newman/zgc_results.json
+          docker run --network test-network -v $(pwd)/postman-collection:/etc/newman -t postman/newman run http://pro-customer-zgc:8080/NimbusPay-ProCustomer.postman_collection.json --reporter-json-export /etc/newman/zgc_results.json
         id: zgc-test
 
       # Stop ZGC container
       - name: Stop ZGC Container
         run: docker stop zgc-app && docker rm zgc-app
+
+      - name: Remove Docker Network
+        run: docker network rm test-network
 
       # Tear down services after tests
       - name: Tear down services

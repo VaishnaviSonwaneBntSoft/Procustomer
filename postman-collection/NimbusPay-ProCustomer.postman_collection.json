@@ -24,10 +24,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/core-identity",
+							"raw": "https://pro-customer:8080/api/core-identity",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -44,10 +44,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/core-identity",
+							"raw": "https://pro-customer:8080/api/core-identity",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -64,10 +64,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/core-identity/987654321",
+							"raw": "https://pro-customer:8080/api/core-identity/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -94,10 +94,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/core-identity/987654321",
+							"raw": "https://pro-customer:8080/api/core-identity/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -115,10 +115,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/core-identity/987654321",
+							"raw": "https://pro-customer:8080/api/core-identity/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -136,10 +136,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/core-identity/customer-data/987654321",
+							"raw": "https://pro-customer:8080/api/core-identity/customer-data/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -172,10 +172,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/demographic-data",
+							"raw": "https://pro-customer:8080/api/demographic-data",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -192,10 +192,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/demographic-data",
+							"raw": "https://pro-customer:8080/api/demographic-data",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -212,10 +212,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/demographic-data/987654321",
+							"raw": "https://pro-customer:8080/api/demographic-data/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -242,10 +242,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/demographic-data/987654321",
+							"raw": "https://pro-customer:8080/api/demographic-data/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -263,10 +263,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/demographic-data/987654321",
+							"raw": "https://pro-customer:8080/api/demographic-data/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -298,10 +298,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/email-address",
+							"raw": "https://localhpro-customerost:8080/api/email-address",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -318,10 +318,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/email-address",
+							"raw": "https://pro-customer:8080/api/email-address",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -338,10 +338,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/email-address/987654321",
+							"raw": "https://pro-customer:8080/api/email-address/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -368,10 +368,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/email-address/987654321",
+							"raw": "https://pro-customer:8080/api/email-address/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -389,10 +389,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/email-address/987654321",
+							"raw": "https://pro-customer:8080/api/email-address/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -424,10 +424,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/mail-address",
+							"raw": "https://pro-customer:8080/api/mail-address",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -444,10 +444,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/mail-address",
+							"raw": "https://pro-customer:8080/api/mail-address",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -464,10 +464,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/mail-address/987654321",
+							"raw": "https://pro-customer:8080/api/mail-address/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -503,10 +503,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/mail-address/987654321",
+							"raw": "https://pro-customer:8080/api/mail-address/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -524,10 +524,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/mail-address/987654321",
+							"raw": "https://pro-customer:8080/api/mail-address/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -559,10 +559,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/national-identity",
+							"raw": "https://pro-customer:8080/api/national-identity",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -579,10 +579,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/national-identity",
+							"raw": "https://pro-customer:8080/api/national-identity",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -599,10 +599,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/national-identity/987654321",
+							"raw": "https://pro-customer:8080/api/national-identity/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -629,10 +629,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/national-identity/987654321",
+							"raw": "https://pro-customer:8080/api/national-identity/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -650,10 +650,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/national-identity/987654321",
+							"raw": "https://pro-customer:8080/api/national-identity/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -685,10 +685,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/phone-number",
+							"raw": "https://pro-customer:8080/api/phone-number",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -705,10 +705,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/phone-number",
+							"raw": "https://pro-customer:8080/api/phone-number",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -725,10 +725,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/phone-number/987654321",
+							"raw": "https://pro-customer:8080/api/phone-number/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -755,10 +755,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:8080/api/phone-number/987654321",
+							"raw": "https://pro-customer:8080/api/phone-number/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
@@ -776,10 +776,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:8080/api/phone-number/987654321",
+							"raw": "https://pro-customer:8080/api/phone-number/987654321",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"pro-customer"
 							],
 							"port": "8080",
 							"path": [
