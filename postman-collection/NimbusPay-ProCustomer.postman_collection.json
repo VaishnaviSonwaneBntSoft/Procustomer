@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "d6c589bd-7c7c-421e-bdaa-c2844ebabd8e",
+		"name": "NimbusPay-ProCustomer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36209248"
+	},
+	"item": [
+		{
+			"name": "CoreIdentity",
+			"item": [
+				{
+					"name": "Create-Core Identity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerNumber\": 987654324,\r\n    \"tenantName\": \"Global Tech Solutions\",\r\n    \"firstName\": \"Rahul\",\r\n    \"middleName1\": \"karuk\",\r\n    \"middleName2\": \"\",\r\n    \"middleName3\": \"\",\r\n    \"familySurname\": \"Sroe\",\r\n    \"dateOfBirth\": \"1990-11-15\",\r\n    \"placeOfBirth\": \"New York\",\r\n    \"mothersMaidenName\": \"Smith\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/core-identity",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"core-identity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All Core Identities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/core-identity",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"core-identity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-Core Identity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/core-identity/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"core-identity",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Core Identity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerNumber\": 0,\r\n    \"tenantName\": \"Acme Corp\",\r\n    \"firstName\": \"Jane\",\r\n    \"middleName1\": \"Alice\",\r\n    \"middleName2\": \"\",\r\n    \"middleName3\": \"\",\r\n    \"familySurname\": \"Smith\",\r\n    \"dateOfBirth\": \"1985-12-05\",\r\n    \"placeOfBirth\": \"San Francisco\",\r\n    \"mothersMaidenName\": \"Johnson\",\r\n    \"deleted\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/core-identity/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"core-identity",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Core Identity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host_URL}}api/core-identity/987654321",
+							"host": [
+								"{{Host_URL}}api"
+							],
+							"path": [
+								"core-identity",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-Customer Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/core-identity/customer-data/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"core-identity",
+								"customer-data",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DemographicData",
+			"item": [
+				{
+					"name": "Create-Demographic Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerNumber\": 987654321,\r\n  \"maritalStatus\": \"Married\",\r\n  \"declaredAnnualIncome\": \"50000.00\",\r\n  \"occupation\": \"Software Engineer\",\r\n  \"balanceOpeningDebt\": 1500,\r\n  \"numberLoans\": 2,\r\n  \"numberCreditCards\": 3,\r\n  \"totalExistCreditLimit\": 50000\r\n}\r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/demographic-data",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"demographic-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All Demographic Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/demographic-data",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"demographic-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-Demographic Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/demographic-data/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"demographic-data",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Demographic Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerNumber\": 987654321,\r\n  \"maritalStatus\": \"Married\",\r\n  \"declaredAnnualIncome\": \"50000.03\",\r\n  \"occupation\": \"Software Engineer\",\r\n  \"balanceOpeningDebt\": 15000,\r\n  \"numberLoans\": 4,\r\n  \"numberCreditCards\": 2,\r\n  \"totalExistCreditLimit\": 50023\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/demographic-data/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"demographic-data",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Demographic Data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/demographic-data/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"demographic-data",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EmailAddress",
+			"item": [
+				{
+					"name": "Create-Email Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerNumber\": 987654321,\r\n    \"emailAddressData\": \"mahajansupriya@gmail.com\",\r\n    \"emailStatus\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/email-address",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"email-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All Email Addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/email-address",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"email-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-Email Address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/email-address/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"email-address",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Email Address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailAddressData\": \"mahajansupriya777@gmail.com\",\r\n    \"emailStatus\": \"Inactive\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/email-address/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"email-address",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Email Address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/email-address/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"email-address",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MailAddress",
+			"item": [
+				{
+					"name": "Create-Mail Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addressType\": \"Residential\",\r\n    \"customerNumber\": 987654321,\r\n    \"buildingNumber\": \"123B\",\r\n    \"addressLine1\": \"456 Elm Street\",\r\n    \"addressLine2\": \"Apt 789\",\r\n    \"addressLine3\": \"near market\",\r\n    \"placeLocation\": \"Springfield\",\r\n    \"stateCounty\": \"IL\",\r\n    \"country\": \"USA\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/mail-address",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mail-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All Mail Addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/mail-address",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mail-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-Mail-Address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/mail-address/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mail-address",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Mail Address",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"addressType\": \"Residential\",\r\n        \"customerNumber\": 987654321,\r\n        \"buildingNumber\": \"65A\",\r\n        \"addressLine1\": \"516 SL Street\",\r\n        \"addressLine2\": \"Apt 700\",\r\n        \"addressLine3\": \"near market\",\r\n        \"placeLocation\": \"Springfield\",\r\n        \"stateCounty\": \"IL\",\r\n        \"country\": \"USA\",\r\n        \"deleted\": false\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/mail-address/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mail-address",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Mail Address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/mail-address/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mail-address",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NationalIdentity",
+			"item": [
+				{
+					"name": "Create-National Identity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerNumber\": 987654321,\r\n  \"passportNumber\": \"P123456789\",\r\n  \"drivingLicenseNumber\": \"DL123456789\",\r\n  \"nationalTaxId\": \"NT123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/national-identity",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"national-identity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All National Identities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/national-identity",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"national-identity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-National Identity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/national-identity/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"national-identity",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-National Identity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerNumber\": 987654321,\r\n  \"passportNumber\": \"P123456449\",\r\n  \"drivingLicenseNumber\": \"DL122256789\",\r\n  \"nationalTaxId\": \"NT123455589\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host_URL}}api/national-identity/987654321",
+							"host": [
+								"{{Host_URL}}api"
+							],
+							"path": [
+								"national-identity",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-National Identity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host_URL}}api/national-identity/987654321",
+							"host": [
+								"{{Host_URL}}api"
+							],
+							"path": [
+								"national-identity",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PhoneNumber",
+			"item": [
+				{
+					"name": "Create-Phone Number",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerNumber\": 987654321,\r\n  \"primaryPhoneNumber\": \"8888146895\",\r\n  \"secondaryPhoneNumber\": \"9098877654\",\r\n  \"primaryPhoneStatus\": \"ACTIVE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8080/api/phone-number",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"phone-number"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All PhoneNumbers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/phone-number",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"phone-number"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-Phone Number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8080/api/phone-number/987654321",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"phone-number",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Phone Number",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"primaryPhoneNumber\": \"6788146895\",\r\n  \"secondaryPhoneNumber\": \"8088877654\",\r\n  \"primaryPhoneStatus\": \"ACTIVE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host_URL}}api/phone-number/987654321",
+							"host": [
+								"{{Host_URL}}api"
+							],
+							"path": [
+								"phone-number",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Phone Number",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host_URL}}api/phone-number/987654321",
+							"host": [
+								"{{Host_URL}}api"
+							],
+							"path": [
+								"phone-number",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
