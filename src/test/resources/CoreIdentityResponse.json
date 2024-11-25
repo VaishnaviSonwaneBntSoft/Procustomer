@@ -1,0 +1,15 @@
+{
+  "consumerId": "b123e456-7e89-12d3-a456-426614174000",
+  "customerNumber": "5432123",
+  "timestamp": "2024-07-24T10:30:00Z",
+  "deleted": false,
+  "firstName": "Suzy",
+  "tenantName": "Doa",
+  "middleName1": "keth",
+  "middleName2": null,
+  "middleName3": "optional",
+  "familySurname": "matt",
+  "placeOfBirth": "California",
+  "mothersMaidenName": "smith"
+}
+  

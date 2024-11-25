@@ -1,0 +1,10 @@
+{
+  "emailId": "550e8400-e29b-41d4-a716-446655440000",
+  "timestamp": "2024-07-31T14:35:22",
+  "customerNumber": 123456789,
+  "emailAddressData": "test@example.com",
+  "emailStatus": "ACTIVE",
+  "isActive": true,
+  "deleted": false
+}
+  

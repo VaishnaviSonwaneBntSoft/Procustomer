@@ -1,0 +1,11 @@
+{
+  "addressType": "Home",
+  "customerNumber": 5432123,
+  "buildingNumber": "123",
+  "addressLine1": "Main Street",
+  "addressLine2": "Apt 4B",
+  "addressLine3": null,
+  "placeLocation": "Downtown",
+  "stateCounty": "Los Angeles County",
+  "country": "USA"
+}

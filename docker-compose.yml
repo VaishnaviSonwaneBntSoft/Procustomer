@@ -1,0 +1,108 @@
+version: '3'
+services:
+  procustomer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/nimbuspay-test1
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318
+      OTEL_SERVICE_NAME: procustomer
+      SERVER_PORT: 8080
+      SERVER_SSL_KEY_ALIAS: Nimbuspay-ProCustomer
+      SERVER_SSL_KEY_STORE: classpath:Nimbuspay-ProCustomer.jks
+      SERVER_SSL_KEY_STORE_PASSWORD: password
+      SERVER_SSL_KEY_STORE_TYPE: JKS
+      SERVER_SSL_ENABLED: true
+      SPRING_FLYWAY_SCHEMAS: procustomer,proshared
+      SPRING_FLYWAY_DEFAULT_SCHEMA: public
+
+  react-frontend:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres_1
+    environment:
+      POSTGRES_DB: nimbuspay-test1
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5436:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    container_name: otelcollector_1
+    command: ["--config=/etc/collector/otel-collector-config.yml"]
+    volumes:
+      - ./docker/collector/otel-collector-config.yml:/etc/collector/otel-collector-config.yml
+    depends_on:
+      - elasticsearch
+      - kibana
+    ports:
+      - "4319:4318"
+
+  #Prometheus
+  prometheus:
+    container_name: prometheus_1
+    image: prom/prometheus
+    restart: always
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9091:9090"
+
+
+  # Zipkin
+  zipkin-all-in-one:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin_1
+    ports:
+      - "9412:9411"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.3
+    container_name: elasticsearch_1
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-XX:UseAVX=2 -Xms1g -Xmx1g
+      - xpack.security.enabled=false
+      - http.port=9201
+    ulimits:
+      memlock:
+        hard: -1
+        soft: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9201:9201
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.13.3
+    container_name: kibana_1
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9201
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9201
+    ports:
+      - 5602:5601
+
+volumes:
+  pgdata:
+  esdata:

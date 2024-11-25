@@ -1,0 +1,12 @@
+{
+  "addressId": "e9d3b58d-6d7f-4b5b-9a9c-2b4e10e1c3d9",
+  "addressType": "Home",
+  "customerNumber": 5432123,
+  "buildingNumber": "123",
+  "addressLine1": "Main Street",
+  "addressLine2": "Apt 4B",
+  "addressLine3": null,
+  "placeLocation": "Downtown",
+  "stateCounty": "Los Angeles County",
+  "country": "USA"
+}

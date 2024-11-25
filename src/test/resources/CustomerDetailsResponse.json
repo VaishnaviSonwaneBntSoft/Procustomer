@@ -1,0 +1,57 @@
+{
+    "demographicDataResponse": {
+        "demographicId": "39e55c67-e614-40b2-990b-75235e416157",
+        "timestamp": "2024-08-05T17:26:05.170816",
+        "customerNumber": 123456789,
+        "maritalStatus": "Single",
+        "declaredAnnualIncome": "50000",
+        "occupation": "Engineer",
+        "balanceOpeningDebt": 1000,
+        "numberLoans": 2,
+        "numberCreditCards": 3,
+        "totalExistCreditLimit": 50000,
+        "deleted": false
+    },
+    "emailAddressResponse": {
+        "emailId": "a545a3b3-759e-495b-a748-fa8550275999",
+        "timestamp": "2024-08-05T17:25:57.77168",
+        "customerNumber": 123456789,
+        "emailAddressData": "john.smith@example.com",
+        "emailStatus": "Verified",
+        "deleted": false,
+        "active": true
+    },
+    "mailAddressResponse": {
+        "addressId": "2ca1ae14-96e7-46a9-b295-8f4244b84c3c",
+        "timestamp": "2024-08-05T17:26:39.625674",
+        "addressType": "Home",
+        "customerNumber": 123456789,
+        "buildingNumber": "123",
+        "addressLine1": "Main St",
+        "addressLine2": "Apt 4B",
+        "addressLine3": null,
+        "placeLocation": "Downtown",
+        "stateCounty": "NY",
+        "country": "USA",
+        "deleted": false
+    },
+    "nationalIdentityResponse": {
+        "nationalId": "81472cc2-7eb4-40fe-9561-24efbe52a134",
+        "timestamp": "2024-08-05T17:26:00.807228",
+        "customerNumber": 123456789,
+        "passportNumber": "P1234567",
+        "drivingLicenseNumber": "DL1234567890",
+        "nationalTaxId": "TAX123456",
+        "deleted": false
+    },
+    "phoneNumberResponse": {
+        "phoneId": "4c4b0e08-e7ec-40fa-be03-59e1ef1fbbd4",
+        "timestamp": "2024-08-05T17:25:54.237416",
+        "customerNumber": 123456789,
+        "defaultPhoneNumber": "+1-123-456-7890",
+        "phoneNumberData": "+1-123-456-7890",
+        "phoneStatus": "Active",
+        "deleted": false,
+        "mobile": false
+    }
+}

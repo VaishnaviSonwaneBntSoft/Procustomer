@@ -1,0 +1,11 @@
+{
+  "timestamp": "2024-07-01T08:00:00",
+  "customerNumber": 4567890123,
+  "maritalStatus": "Separated",
+  "declaredAnnualIncome": "55000",
+  "occupation": "Software Developer",
+  "balanceOpeningDebt": 3000,
+  "numberLoans": 4,
+  "numberCreditCards": 3,
+  "totalExistCreditLimit": 15000
+}
