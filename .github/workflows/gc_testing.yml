@@ -17,16 +17,18 @@ jobs:
       ZGC_PARAMS: "-XX:+UseZGC"
 
     steps:
-      #checkout the repo
+      # Checkout the repository
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # Set up Java 21
       - name: Set up Java 21
         uses: actions/setup-java@v3
         with:
           java-version: 21
           distribution: 'temurin'
 
+      # Set up Gradle
       - name: Set up Gradle
         uses: gradle/wrapper-validation-action@v1
 
@@ -54,54 +56,57 @@ jobs:
           docker-compose -f docker-compose.yml up -d postgres
           sleep 20 # Wait for postgres to start
 
-      #build docker image of pro-customer app
+      # Build Docker image of pro-customer app
       - name: Build Docker Image
         run: docker build -t $IMAGE_NAME .
 
-      #Run application with G1GC
+      # Install K6
+      - name: Install K6
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y k6
+
+      # Run application with G1GC
       - name: Run Application with G1GC
         run: |
           docker run -d --name pro-customer-g1gc -p $APP_PORT:8080 $IMAGE_NAME java $G1GC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
         id: g1gc-app
 
-        #install newman to test api
-      - name: Install Newman
-        run: npm install -g newman
-
-        #Run postman tests(G1GC)
-      - name: Run Postman tests
+      # Run K6 tests (G1GC)
+      - name: Run K6 tests for G1GC
         run: |
-          newman run postman-collection/NimbusPay-ProCustomer.postman_collection.json -r json --reporter-json-export g1gc_results.json
+          k6 run --out json=g1gc_results.json k6-test-script.js
         id: g1gc-test
 
-        #Stop G1GC container
+      # Stop G1GC container
       - name: Stop G1GC Container
         run: docker stop g1gc-app && docker rm g1gc-app
 
-        #Run application with ZGC
-      - name: Run Application With ZGC
+      # Run application with ZGC
+      - name: Run Application with ZGC
         run: |
           docker run -d --name pro-customer-zgc -p 8081:8080 $IMAGE_NAME java $ZGC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
         id: zgc-app
 
-        #Run Postman test(ZGC)
-      - name: Run Postman tests
+      # Run K6 tests (ZGC)
+      - name: Run K6 tests for ZGC
         run: |
-          newman run postman-collection/NimbusPay-ProCustomer.postman_collection \
-          -r json --reporter-json-export zgc_results.json
+          k6 run --out json=zgc_results.json k6-test-script.js
         id: zgc-test
 
-        #Stop G1GC container
+      # Stop ZGC container
       - name: Stop ZGC Container
         run: docker stop zgc-app && docker rm zgc-app
 
       # Tear down services after tests
       - name: Tear down services
-        run: docker-compose -f docker-compose.yml down -d postgres
+        run: docker-compose -f docker-compose.yml down
 
-        #Pulish Test Results
+      # Publish Test Results
       - name: Publish Test Results to Github Packages
         uses: actions/upload-artifact@v3
         with:
           name: gc-comparison-results
-
+          path: |
+            g1gc_results.json
+            zgc_results.json
