@@ -71,8 +71,7 @@ jobs:
         #Run postman tests(G1GC)
       - name: Run Postman tests
         run: |
-          newman run postman-collection/NimbusPay-ProCustomer.postman_collection.json \
-          -r json --reporter-json-export g1gc_results.json --verbose
+          newman run postman-collection/NimbusPay-ProCustomer.postman_collection.json -r json --reporter-json-export g1gc_results.json
         id: g1gc-test
 
         #Stop G1GC container
