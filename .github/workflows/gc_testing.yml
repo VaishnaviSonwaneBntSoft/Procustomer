@@ -75,7 +75,7 @@ jobs:
       # Run Postman tests using Newman Docker image (G1GC)
       - name: Run Postman Tests (G1GC)
         run: |
-          docker run -t postman/newman run postman-collection/NimbusPay-ProCustomer.postman_collection.json \
+          docker run -t postman/newman run /postman-collection/NimbusPay-ProCustomer.postman_collection.json \
           --reporter-json-export /g1gc_results.json
         id: g1gc-test
 
@@ -92,7 +92,7 @@ jobs:
       # Run Postman tests using Newman Docker image (ZGC)
       - name: Run Postman Tests (ZGC)
         run: |
-          docker run -t postman/newman run postman-collection/NimbusPay-ProCustomer.postman_collection.json \
+          docker run -t postman/newman run /postman-collection/NimbusPay-ProCustomer.postman_collection.json \
           --reporter-json-export /zgc_results.json
         id: zgc-test
 
