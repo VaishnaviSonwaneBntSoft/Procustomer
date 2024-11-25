@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d6c589bd-7c7c-421e-bdaa-c2844ebabd8e",
+		"_postman_id": "4c47db5a-10cd-4c28-8ac3-6e53fa3c1471",
 		"name": "NimbusPay-ProCustomer",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "36209248"
+		"_exporter_id": "36218102"
 	},
 	"item": [
 		{
@@ -115,11 +115,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{Host_URL}}api/core-identity/987654321",
+							"raw": "https://localhost:8080/api/core-identity/987654321",
+							"protocol": "https",
 							"host": [
-								"{{Host_URL}}api"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
+								"api",
 								"core-identity",
 								"987654321"
 							]
@@ -626,11 +629,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{Host_URL}}api/national-identity/987654321",
+							"raw": "https://localhost:8080/api/national-identity/987654321",
+							"protocol": "https",
 							"host": [
-								"{{Host_URL}}api"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
+								"api",
 								"national-identity",
 								"987654321"
 							]
@@ -644,11 +650,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{Host_URL}}api/national-identity/987654321",
+							"raw": "https://localhost:8080/api/national-identity/987654321",
+							"protocol": "https",
 							"host": [
-								"{{Host_URL}}api"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
+								"api",
 								"national-identity",
 								"987654321"
 							]
@@ -746,11 +755,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{Host_URL}}api/phone-number/987654321",
+							"raw": "https://localhost:8080/api/phone-number/987654321",
+							"protocol": "https",
 							"host": [
-								"{{Host_URL}}api"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
+								"api",
 								"phone-number",
 								"987654321"
 							]
@@ -764,11 +776,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{Host_URL}}api/phone-number/987654321",
+							"raw": "https://localhost:8080/api/phone-number/987654321",
+							"protocol": "https",
 							"host": [
-								"{{Host_URL}}api"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
+								"api",
 								"phone-number",
 								"987654321"
 							]
