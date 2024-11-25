@@ -54,7 +54,6 @@ jobs:
       - name: Run Postman tests
         run: |
           newman run postman-collection/NimbusPay-ProCustomer.postman_collection.json \
-          -e postman-collection/NimbusPay-ProCustomer.postman_collection.json \
           -r json --reporter-json-export results/g1gc_results.json
         id: g1gc-test
 
