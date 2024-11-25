@@ -48,11 +48,11 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
           docker-compose --version
 
-      # Set up Docker Compose
-      - name: Start services using Docker Compose
+      # Start only Postgres service using Docker Compose
+      - name: Start Postgres service using Docker Compose
         run: |
-          docker-compose -f docker-compose.yml up -d
-          sleep 20 # Wait for services to start
+          docker-compose -f docker-compose.yml up -d postgres
+          sleep 20 # Wait for postgres to start
 
       #build docker image of pro-customer app
       - name: Build Docker Image
