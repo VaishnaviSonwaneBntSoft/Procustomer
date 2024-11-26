@@ -46,6 +46,7 @@ jobs:
         with:
           version: latest
 
+      #Install docker compose
       - name: Install Docker Compose
         run: |
           sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -62,6 +63,7 @@ jobs:
       - name: Build Docker Image
         run: docker build -t $IMAGE_NAME .
 
+      #Create custom network
       - name: Create Docker Network
         run: docker network create test-network
 
@@ -70,6 +72,20 @@ jobs:
         run: |
           docker run -d --name pro-customer --network test-network -p 8080:8080 $IMAGE_NAME java $G1GC_PARAMS -jar build/libs/procustomer-0.0.1-SNAPSHOT.jar
         id: g1gc-app
+
+      - name: Wait for the application to be ready
+        run: |
+          for i in {1..10}; do
+          curl -s http://pro-customer:8080/health || true
+          if [ $? -eq 0 ]; then
+           echo "Application is ready!"
+           exit 0
+          fi
+          echo "Waiting for the application..."
+          sleep 5
+          done
+          echo "Application failed to start"
+          exit 1
 
       # Pull Newman Docker Image
       - name: Pull Newman Docker Image
@@ -101,6 +117,7 @@ jobs:
       - name: Stop ZGC Container
         run: docker stop zgc-app && docker rm zgc-app
 
+      #Remove custom network
       - name: Remove Docker Network
         run: docker network rm test-network
 
